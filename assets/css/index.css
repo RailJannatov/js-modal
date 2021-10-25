@@ -1,0 +1,129 @@
+body {
+  background-image: url("/assets/image/52-522436_best-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal .modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  height: 68%;
+}
+
+.modal .closeBtn {
+  font-size: 30px;
+  color: gray;
+}
+
+#login-page {
+  display: block;
+}
+
+#login-page .login {
+  padding: 40px 64px;
+  text-align: center;
+  background-color: #00000052;
+  border-radius: 10px;
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#login-page .login h2 {
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+#login-page .login input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+#login-page .login .userEmail,
+#login-page .login .userPassword {
+  margin-bottom: 6px;
+}
+
+#login-page .login .btnLog {
+  padding: 2px 72px;
+  margin-top: 35px;
+}
+
+.icon-header {
+  display: none;
+  text-align: center;
+  color: green;
+}
+
+.icon-header i {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.modal-form {
+  width: 600px;
+  height: 400px;
+  display: none;
+}
+
+.modal-form .modal-item {
+  padding: 10px;
+  text-align: center;
+}
+
+.modal-form .modal-item i {
+  font-size: 24px;
+  color: #4d982e;
+}
+
+#displayTable {
+  display: none;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  -webkit-transform: translate(-40%, -40%);
+          transform: translate(-40%, -40%);
+}
+
+#displayTable tr,
+#displayTable th {
+  border: 1px solid black;
+}
+
+.filter {
+  display: none;
+  position: absolute;
+  top: 17%;
+  left: 30%;
+}
+
+#filtered {
+  border-radius: 16px;
+  margin-left: 39px;
+}
+
+#submitBtnFilter {
+  border: 2px solid gray;
+  border-radius: 18px;
+  margin-left: 50px;
+  background-color: #847272;
+  color: #fff;
+}
