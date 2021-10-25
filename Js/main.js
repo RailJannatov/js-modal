@@ -23,25 +23,22 @@ const cars = [];
 
 let changeableFilteredCategory;
 
+
+
 filterCategory.addEventListener("change",function(e){
     changeableFilteredCategory = e.target.value;   
+
 })
+
+
 submitBtnFilter.onclick = (e) =>{
     e.preventDefault();
-    filteredCategory(changeableFilteredCategory);   
-}
-          
-function filteredCategory(deyishen){
-  let filteredByCategory =   cars.filter(car => 
-    car.category == deyishen );
-  console.log(filteredByCategory);
-   if(filteredByCategory!==undefined){
-       return  alert("Istediyiniz category de mashin movcuddur");
-   }
-   else{
-       alert("Bu category de mashin yoxdur");
-   }
-}
+    let foundCategory = cars.filter(v => v.category ===changeableFilteredCategory );
+  foundCategory.forEach((car)=>{
+   return body.innerText =`${car.category} bu category de olan mashinin adi ${car.name}`  ;  
+  })
+
+  }
 
 
 let changeableUserName;
@@ -124,6 +121,7 @@ function renderList(){
         let iconEditCell = row.insertCell(4);
       let imageInTD =    document.createElement("img");
       imageInTD.setAttribute("src",car.carImage);
+      imageInTD.style.height ="120px";
       imageCell.append(imageInTD);
         nameCell.innerHTML = `${car.name}`;
         iconRemoveCell.innerHTML = `<i class="fas fa-trash-alt"></i>`;
@@ -139,9 +137,8 @@ function renderList(){
         iconDetailCell.style.color = "green";
         iconEditCell.style.color = "blue";
 
-
         iconRemoveCell.onclick = function(e){          
-            this.parentElement.remove();
+              this.parentElement.remove();
         }
         iconDetailCell.onclick = function(e){
                    modalBg.style.display = "block";
@@ -164,18 +161,22 @@ btnAdd.addEventListener("click",function(e){
        modalBg.style.display = "none";
        displayTable.style.display ="block";
        filterDiv.style.display = "block";
+     
     const car = {
        name: changeableMarka,
        price:changeablePrice,
        category:changeableCategory,
-       carImage:files
+       carImage:files,
     }
+    
     if(car.name !== undefined && car.price !== undefined && car.category !== undefined && car.carImage !== undefined){
             modalForm.style.display ="none";
             cars.push(car);
              renderList();
+            
     }
     else{
         alert("Inputlardan tam doldurulmalidi");
     }
+   
   })
